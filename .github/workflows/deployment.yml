@@ -43,4 +43,4 @@ jobs:
         script: |
           cd /var/www/html/demo/laravel-sample-cicd
           git checkout -f
-          git pull
+          git pull --ff-only
