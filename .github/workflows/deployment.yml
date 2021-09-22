@@ -45,3 +45,5 @@ jobs:
           git checkout .
           git pull --ff-only
           git remote prune origin
+
+          php artisan cache:clear
