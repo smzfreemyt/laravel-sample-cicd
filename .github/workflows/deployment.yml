@@ -34,7 +34,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
     
-    - name: Deployment
+    - name: Deployment to server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
@@ -46,4 +46,10 @@ jobs:
           git checkout .
           git pull origin master
           git remote prune origin
+
+          composer install
+          npm install
+
           php artisan cache:clear
+          php artisan config:cache
+          npm run prod
