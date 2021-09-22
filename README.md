@@ -3,5 +3,8 @@
 - SSH KEY doesn't work yet
 
 
-uses: appleboy/ssh-action@master
-- change version to appleboy/ssh-action@v0.1.4
+        host: ${{ secrets.SSH_HOST }}
+        port: ${{ secrets.SSH_PORT }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        # password: ${{ secrets.SSH_PASSWORD }}
