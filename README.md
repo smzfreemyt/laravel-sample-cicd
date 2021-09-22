@@ -2,4 +2,6 @@
 
 - SSH KEY doesn't work yet
 
-- try
+
+uses: appleboy/ssh-action@master
+- change version to appleboy/ssh-action@v0.1.4
