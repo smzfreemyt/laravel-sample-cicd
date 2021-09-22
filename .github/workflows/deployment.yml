@@ -33,3 +33,14 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    
+    - name: Deployment
+      uses: appleboy/ssh-action@main
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        username: ${{ secrets.SSH_USERNAME }}
+        script: |
+          cd /var/www/html/demo/laravel-sample-cicd
+          git checkout -f
+          git pull
