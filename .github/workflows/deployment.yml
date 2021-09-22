@@ -39,7 +39,8 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
+        # password: ${{ secrets.SSH_PASSWORD }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /var/www/html/demo/laravel-sample-cicd
@@ -47,9 +48,9 @@ jobs:
           git pull origin master
           git remote prune origin
 
-          composer install
-          npm install
+        # composer install
+          # npm install
 
-          php artisan cache:clear
-          php artisan config:cache
-          npm run prod
+          # php artisan cache:clear
+          # php artisan config:cache
+          # npm run prod
