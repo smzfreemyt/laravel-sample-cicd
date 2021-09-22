@@ -3,6 +3,8 @@
 - SSH KEY doesn't work yet
 
 
+- Add id_rsa
+
 - This this:
   host: ${{ secrets.SSH_HOST }}
   port: ${{ secrets.SSH_PORT }}
