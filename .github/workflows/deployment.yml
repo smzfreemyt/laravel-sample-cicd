@@ -38,8 +38,8 @@ jobs:
       uses: appleboy/ssh-action@main
       with:
         host: ${{ secrets.SSH_HOST }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
         username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
         script: |
           cd /var/www/html/demo/laravel-sample-cicd
           git checkout -f
