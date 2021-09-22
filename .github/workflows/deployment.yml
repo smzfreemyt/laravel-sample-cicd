@@ -43,7 +43,6 @@ jobs:
         script: |
           cd /var/www/html/demo/laravel-sample-cicd
           git checkout .
-          git pull --ff-only
+          git pull origin master
           git remote prune origin
-
           php artisan cache:clear
